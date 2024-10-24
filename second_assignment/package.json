@@ -1,0 +1,11 @@
+{
+  "name": "second_assignment",
+  "version": "1.0.0",
+  "description": "Second assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aderinola Adedeji",
+  "license": "ISC"
+}
