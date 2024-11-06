@@ -1,10 +1,1 @@
-[
-  { "id": 1, "name": "Socks", "size": "M", "price": 11.99 },
-  { "id": 2, "name": "T-shirt", "size": "L", "price": 59.49 },
-  { "id": 3, "name": "Jeans", "size": "32", "price": 20.99 },
-  { "id": 4, "name": "Hat", "size": "One Size", "price": 19.99 },
-  { "id": 5, "name": "Jacket", "size": "XL", "price": 59.99 },
-  { "name": "Joggers", "size": "M", "id": 6, "price": 89.99 },
-  { "name": "Sweat Shirt", "size": "XL", "id": 7, "price": 34.99 },
-  { "name": "Plain White T-Shirt", "size": "XL", "price": 97.49, "id": 8 }
-]
+[{"id":1,"name":"Socks","size":"M","price":78.46},{"id":2,"name":"T-shirt","size":"L","price":53.75},{"id":3,"name":"Jeans","size":"32","price":45.34},{"id":4,"name":"Hat","size":"One Size","price":65.45},{"id":5,"name":"Jacket","size":"XL","price":59.87},{"name":"T-shirt","size":"L","price":21.99,"id":6}]

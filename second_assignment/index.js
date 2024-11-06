@@ -5,13 +5,12 @@ const {
   productWithoutId,
 } = require("./route/inventory_route.js");
 
-//Accept custom PORT number and set default to 8000
 const PORT = process.argv[2] ?? 8000;
-const HOST_NAME = "localhost";
+const HOSTNAME = "localhost";
 
-//create the server request handler function
+//creates the server request handler function
 function requestHandler(req, res) {
-  //check if request url is / or /products and
+  //it checks if request url is / or /products
   if (req.url === "/" || req.url === "/products") {
     productWithoutId(req, res);
   }
@@ -19,7 +18,7 @@ function requestHandler(req, res) {
   else if (req.url.match(/\/products\/([0-9]+)/)) {
     productWithID(req, res);
   }
-  //if the request does not match as intended, return 404 page
+  //return 404 page if the request does not match as intended,
   else {
     res.writeHead(404);
     res.write(JSON.stringify({ message: "Not Found" }));
@@ -27,9 +26,9 @@ function requestHandler(req, res) {
   }
 }
 
-//create and listen to the server
+//creates and listens to the server
 const server = http.createServer(requestHandler);
 
-server.listen(PORT, HOST_NAME, () => {
-  console.log(`server is running on http://${HOST_NAME}:${PORT}`);
+server.listen(PORT, HOSTNAME, () => {
+  console.log(`server is running on http://${HOSTNAME}:${PORT}`);
 });

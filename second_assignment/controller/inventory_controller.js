@@ -3,7 +3,7 @@ const fs = require("fs");
 
 const productFilePath = path.join(__dirname, "../db", "inventory.json");
 
-//get all products from the database
+//all products from the database
 function getAllProducts(req, res) {
   fs.readFile(productFilePath, "utf8", (err, data) => {
     if (err) {
@@ -20,12 +20,12 @@ function getAllProducts(req, res) {
   });
 }
 
-//get a single product from the database
+//single product from the database
 function getProductById(req, res, id) {
   fs.readFile(productFilePath, "utf8", (err, data) => {
     if (err) {
       res.writeHead(500);
-      res.write(JSON.stringify({ message: "Unable to fetch Product" }));
+      res.write(JSON.stringify({ message: "Unable to fetch product" }));
       res.end();
     }
     const products = JSON.parse(data);
@@ -60,11 +60,11 @@ function createProduct(req, res) {
   });
   req.on("end", () => {
     const newProduct = JSON.parse(body);
-    //read the productdb files
+    //read the db files
     fs.readFile(productFilePath, "utf-8", (err, data) => {
       if (err) {
         res.writeHead(500);
-        res.write(JSON.stringify({ message: "Unable to fetch Products" }));
+        res.write(JSON.stringify({ message: "Unable to fetch products" }));
         res.end();
       } else {
         const products = JSON.parse(data);
@@ -80,7 +80,7 @@ function createProduct(req, res) {
         fs.writeFile(productFilePath, allProducts, (err) => {
           if (err) {
             res.writeHead(500);
-            res.write(JSON.stringify({ message: "Unable to Save Product" }));
+            res.write(JSON.stringify({ message: "Unable to save product" }));
             res.end();
           } else {
             res.writeHead(201);
@@ -98,7 +98,7 @@ function createProduct(req, res) {
   });
 }
 
-//update a specific product in the database
+//update specific product in the database
 function updateProductById(req, res, id) {
   let body = "";
   //get sent data to be updated
@@ -121,7 +121,7 @@ function updateProductById(req, res, id) {
         products[productIndex] = { ...products[productIndex], ...updateBody };
 
         const updatedProducts = JSON.stringify(products);
-        //save product back into the database
+        //saves product back into the database
         fs.writeFile(productFilePath, updatedProducts, (err) => {
           if (err) {
             res.writeHead(500);
